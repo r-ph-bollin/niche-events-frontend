@@ -227,9 +227,9 @@ form.signup, form.login  {
   box-sizing: content-box;
   
   margin: 0.1em;
-  font: 300 12px system-ui;
+  font: 300 10px system-ui;
   font-family: "Poppins";
-  font-size: 16px;
+  font-size: 14px;
   padding: 1px 7px 2px;
   border-width: 1px;
   border-style: solid;
