@@ -28,6 +28,10 @@ function App() {
               element={<DailyEventView key={234} offset={2} />}
             />
             <Route
+              path="/twoDaysAfterTomorrow"
+              element={<DailyEventView key={678} offset={3} />}
+            />
+            <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/editor" />}
             />

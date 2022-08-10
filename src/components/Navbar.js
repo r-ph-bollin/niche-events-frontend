@@ -31,9 +31,16 @@ const Navbar = () => {
                 <p>Tomorrow</p>
               </Button>
             </Link>
+            {/*<br />*/}
+            <br />
             <Link to="/dayAfterTomorrow">
               <Button className="datefilterbutton">
                 <p>In 2 days</p>
+              </Button>
+            </Link>
+            <Link to="/twoDaysAfterTomorrow">
+              <Button className="datefilterbutton">
+                <p>In 3 days</p>
               </Button>
             </Link>
           </span>

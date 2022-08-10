@@ -200,33 +200,6 @@ nav button:hover {
   font-size: 1em;
 }
 
-
-.datefilterbutton {
-  background: var(--primary);
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  margin: 3px;
-  font-family: "Poppins";
-  font-size: 18px;
-  font-optical-sizing: auto;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.datefilterbutton:hover {
-  background: var(--error);
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  margin: 3px;
-  font-family: "Poppins";
-  font-size: 18px;
-  font-optical-sizing: auto;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 /* auth forms */
 form.signup, form.login  {
   max-width: 400px;
@@ -236,3 +209,36 @@ form.signup, form.login  {
   border-radius: 4px;
 }
 
+.datefilterbutton {
+  -webkit-appearance: button;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: #fff;
+  letter-spacing: 1px;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  background-color: var(--primary);
+  box-sizing: content-box;
+  
+  margin: 0.1em;
+  font: 300 12px system-ui;
+  font-family: "Poppins";
+  font-size: 16px;
+  padding: 1px 7px 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-image: initial;
+  cursor: pointer;
+}
+
+.datefilterbutton:hover {
+  background-color: var(--error);
+}
