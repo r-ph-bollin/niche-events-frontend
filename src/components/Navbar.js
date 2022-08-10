@@ -17,7 +17,13 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h3>Berlin Niche Events</h3>
+          <h3>
+            Berlin
+            <br />
+            Niche
+            <br />
+            Events
+          </h3>
         </Link>
         <div>
           <span>
@@ -58,6 +64,7 @@ const Navbar = () => {
           {!user && (
             <div>
               <Link to="/login">Login</Link>
+              <br /> <br />
               <Link to="/signup">Signup</Link>
             </div>
           )}
