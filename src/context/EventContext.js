@@ -8,7 +8,6 @@ export const eventsReducer = (state, action) => {
   console.log({ state, action });
   switch (action.type) {
     case "SET_EVENTS":
-      // if (state.event.user_id === state.user._id) {
       if (true) {
         return {
           events: action.payload,
@@ -18,7 +17,6 @@ export const eventsReducer = (state, action) => {
         return state;
       }
     case "CREATE_EVENT":
-      // if (state.event.user_id === state.user._id) {
       if (true) {
         return {
           events: [action.payload, ...state.events],
@@ -28,7 +26,6 @@ export const eventsReducer = (state, action) => {
         return state;
       }
     case "DELETE_EVENT":
-      // if (state.event.user_id === state.user._id) {
       if (true) {
         return {
           events: state.events.filter((w) => w._id !== action.payload._id),
@@ -43,7 +40,6 @@ export const eventsReducer = (state, action) => {
 };
 
 export const EventsContextProvider = ({ children }) => {
-  console.log("test");
   const [state, dispatch] = useReducer(eventsReducer, {
     events: null,
   });
@@ -65,7 +61,6 @@ export const EventsContextProvider = ({ children }) => {
 
       if (response.ok) {
         dispatch({ type: "SET_EVENTS", payload: json });
-        console.log("STUFF IS OKAY", response, json);
       } else {
         console.log("STUFF IS NOT OKAY", response, json);
       }

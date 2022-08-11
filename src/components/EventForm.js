@@ -8,7 +8,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 //import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 ////////////////////////
-const EventForm = () => {
+const EventForm = ({ handleEventAdditionFromForm }) => {
   const { dispatch } = useEventsContext();
   const { user } = useAuthContext();
 
@@ -29,7 +29,6 @@ const EventForm = () => {
     }
 
     const event = { title, description, start_date, end_date, address };
-    console.log(event);
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/api/events`, {
       method: "POST",
@@ -43,9 +42,9 @@ const EventForm = () => {
 
     if (!response.ok) {
       setError(json.error);
-      console.log(json);
       setEmptyFields(json.emptyFields);
     }
+
     if (response.ok) {
       setTitle("");
       setDescription("");
@@ -53,9 +52,11 @@ const EventForm = () => {
       setEnd_date("");
       setError(null);
       setEmptyFields([]);
-      dispatch({ type: "CREATE_EVENT", payload: json });
+      handleEventAdditionFromForm(json);
+      // dispatch({ type: "CREATE_EVENT", payload: json });
     }
   };
+
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add a New Event</h3>

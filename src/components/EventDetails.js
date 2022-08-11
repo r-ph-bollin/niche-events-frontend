@@ -1,10 +1,10 @@
 import { useEventsContext } from "../hooks/useEventsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-// date fns
+// date fns - this will tell at the bottom of each event card how long ago an event was created/added to db
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-const EventDetails = ({ event }) => {
+const EventDetails = ({ event, handleEventDeletionFromForm }) => {
   const { dispatch } = useEventsContext();
   const { user } = useAuthContext();
 
@@ -25,6 +25,8 @@ const EventDetails = ({ event }) => {
     const json = await response.json();
 
     if (response.ok) {
+      console.log("I WAS DELETED JUST NOW!", json);
+      handleEventDeletionFromForm(json._id);
       dispatch({ type: "DELETE_EVENT", payload: json });
     }
   };
